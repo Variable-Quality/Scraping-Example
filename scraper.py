@@ -4,6 +4,15 @@ import re
 import os
 import json
 
+#Creating important directories
+
+if not os.path.exists("json"):
+    os.mkdir("json")
+
+if not os.path.exists("cache"):
+    os.mkdir("cache")
+
+
 #Sends a GET request to books.toscrape.com, returns a Response object (not plaintext!!!)
 
 #https://www.useragentstring.com/pages/useragentstring.php
