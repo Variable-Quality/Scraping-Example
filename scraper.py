@@ -225,13 +225,13 @@ def dump_to_json(book) -> None:
        
 def main(soup:BeautifulSoup) -> None:
 
-    result_1 = easiest_method(soup)
-    result_1 = get_information(result_1)
-    for book in result_1:
+    t_result = easiest_method(soup)
+    result = get_information(t_result)
+    for book in result:
                                 #This page uses non-complete URLS for its hrefs
                                 #So I do this to make it look nicer
                                 #You could also store the URL in this format
-                                #But thats more memory then
+                                #But thats more memory then (not like that matters in python lol)
         print(book.title + "\n", "{}/{}".format(URL, book.link) + "\n", str(book.price) + "\n", "Stars: {}\n".format("*"*book.stars), "Stock Count: {}\n".format(book.stock_count))
 
         cache_page(f"{URL}/{book.link}", book.title)
